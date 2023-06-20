@@ -1,21 +1,25 @@
-import {newReleaseConfiguration, Rental} from "./domain/movie/videoStore";
-import {printHtmlReceipt} from "./domain/movie/htmlReceipt";
-import {printTextReceipt} from "./domain/movie/textReceipt";
+import { newReleaseConfiguration } from './domain/movie/videoStore';
+import { printHtmlReceipt } from './domain/movie/htmlReceipt';
+import { printTextReceipt } from './domain/movie/textReceipt';
+import { Rental } from './domain/movie/Rental';
 
-let aRental = new Rental(1, newReleaseConfiguration("Harry Potter"));
-let anotherRental = new Rental(1, newReleaseConfiguration("Mission Impossible"));
-let thirdRental = new Rental(4, newReleaseConfiguration("Peppa pig"));
-console.log("------ PLAIN TEXT --------")
+let aRental = new Rental(1, newReleaseConfiguration('Harry Potter'));
+let anotherRental = new Rental(
+  1,
+  newReleaseConfiguration('Mission Impossible')
+);
+let thirdRental = new Rental(4, newReleaseConfiguration('Peppa pig'));
+console.log('------ PLAIN TEXT --------');
 console.log(
-    printTextReceipt("Text Receipt User",
-        Array.of(
-            aRental,
-            anotherRental,
-            thirdRental)));
-console.log("------ HTML --------")
+  printTextReceipt(
+    'Text Receipt User',
+    Array.of(aRental, anotherRental, thirdRental)
+  )
+);
+console.log('------ HTML --------');
 console.log(
-    printHtmlReceipt("Html Receipt User",
-        Array.of(
-            aRental,
-            anotherRental,
-            thirdRental)));
+  printHtmlReceipt(
+    'Html Receipt User',
+    Array.of(aRental, anotherRental, thirdRental)
+  )
+);

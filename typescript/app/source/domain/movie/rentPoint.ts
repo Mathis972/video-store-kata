@@ -1,4 +1,4 @@
-import { Rental } from './videoStore';
+import { Rental } from './Rental';
 
 const rentPointsFor = (
   f: (r: Rental) => number

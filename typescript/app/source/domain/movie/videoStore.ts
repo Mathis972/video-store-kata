@@ -1,35 +1,5 @@
-export class MoviePrices {
-  additionalCost: number;
-  movieBasePrice: number;
+import { MovieRentInfo } from './MovieRentInfo';
 
-  constructor(additionalCost: number, movieBasePrice: number) {
-    this.additionalCost = additionalCost;
-    this.movieBasePrice = movieBasePrice;
-  }
-}
-export class Rental {
-  rentalDays: number;
-  mc: MovieConfiguration;
-
-  constructor(rentalDays: number, m: MovieConfiguration) {
-    this.rentalDays = rentalDays;
-    this.mc = m;
-  }
-}
-export class MovieRentInfo {
-  minRentDays: number;
-  additionaCostPerDay: number;
-  additionalRenterPoint: number;
-  constructor(
-    minRentDays: number,
-    additionaCostPerDay: number,
-    additionalRenterPoint: number
-  ) {
-    this.minRentDays = minRentDays;
-    this.additionaCostPerDay = additionaCostPerDay;
-    this.additionalRenterPoint = additionalRenterPoint;
-  }
-}
 export class MovieConfiguration {
   title: string;
   price: number;

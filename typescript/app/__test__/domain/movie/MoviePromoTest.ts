@@ -97,4 +97,28 @@ describe('MoviePromo', function () {
     );
     expect(calculateTotalMoviesPrice(testArray)).toEqual(36);
   });
+
+  it('rent over or equal 20 different movies w/ discount (with 30% off)', () => {
+    const testArray = new Array(15).fill(
+      new Rental(1, newReleaseConfiguration('UNUSED'))
+    );
+    const testChildrenArray = new Array(5).fill(
+      new Rental(1, childrenConfiguration('CHILD'))
+    );
+    expect(
+      calculateTotalMoviesPrice([...testArray, ...testChildrenArray])
+    ).toEqual(32.02);
+  });
+
+  it('rent over or equal 40 different movies w/ discount (limit of 80% off)', () => {
+    const testArray = new Array(30).fill(
+      new Rental(1, newReleaseConfiguration('UNUSED'))
+    );
+    const testChildrenArray = new Array(30).fill(
+      new Rental(1, childrenConfiguration('CHILD'))
+    );
+    expect(
+      calculateTotalMoviesPrice([...testArray, ...testChildrenArray])
+    ).toEqual(18.9);
+  });
 });

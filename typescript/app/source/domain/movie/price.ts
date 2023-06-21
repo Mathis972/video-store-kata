@@ -23,8 +23,14 @@ export const calculateTotalMoviesPrice = (rentals: Rental[]) => {
     const isChild = rental.mc.price === 1.5;
     const isRegular = rental.mc.price === 3.0;
     const n = calculateSingleMoviePrice(rental);
-    const wasRegularPrice = history.find((r) => r.mc.price === 3)?.mc.price;
-    const wasChildPrice = history.find((r) => r.mc.price === 1.5)?.mc.price;
+    const wasRegular = history.find((r) => r.mc.price === 3);
+    const wasRegularPrice = wasRegular
+      ? calculateSingleMoviePrice(wasRegular)
+      : undefined;
+    const wasChild = history.find((r) => r.mc.price === 1.5);
+    const wasChildPrice = wasChild
+      ? calculateSingleMoviePrice(wasChild)
+      : undefined;
     const wasRegularIndex = history.findIndex((r) => r.mc.price === 3);
     const wasChildIndex = history.findIndex((r) => r.mc.price === 1.5);
     if (wasChildPrice && isRegular) {

@@ -6,14 +6,22 @@ import { calculateTotalMoviesPrice } from '../../../source/domain/movie/price';
 import { Rental } from '../../../source/domain/movie/Rental';
 
 describe('MoviePromo', function () {
+  it('rent w/ discount on combo only', () => {
+    expect(
+      calculateTotalMoviesPrice([
+        new Rental(3, newReleaseConfiguration('UNUSED')),
+        new Rental(6, childrenConfiguration('ENFANT')),
+      ])
+    ).toEqual(10.5);
+  });
   it('rent w/ discount on combo', () => {
     expect(
       calculateTotalMoviesPrice([
         new Rental(2, newReleaseConfiguration('UNUSED')),
         new Rental(2, newReleaseConfiguration('UNUSED')),
-        new Rental(2, childrenConfiguration('ENFANT')),
+        new Rental(4, childrenConfiguration('ENFANT')),
       ])
-    ).toEqual(12.15);
+    ).toEqual(12.3);
   });
 
   it('rent w/out discount', () => {
@@ -33,7 +41,7 @@ describe('MoviePromo', function () {
         new Rental(1, newReleaseConfiguration('UNUSED')),
         new Rental(1, childrenConfiguration('UNUSED')),
       ])
-    ).toEqual(9.3);
+    ).toEqual(8.4);
   });
 
   it('rent w/ two discounts separated', () => {
@@ -45,6 +53,6 @@ describe('MoviePromo', function () {
         new Rental(1, childrenConfiguration('UNUSED')),
         new Rental(1, childrenConfiguration('UNUSED')),
       ])
-    ).toEqual(24.3);
+    ).toEqual(20.7);
   });
 });

@@ -67,4 +67,20 @@ describe('MoviePromo', function () {
       ])
     ).toEqual(34.2);
   });
+
+  it('rent over or equal 8 same movies w/ discount (with 10% off)', () => {
+    expect(
+      calculateTotalMoviesPrice([
+        new Rental(3, newReleaseConfiguration('UNUSED')),
+        new Rental(3, newReleaseConfiguration('UNUSED')),
+        new Rental(2, newReleaseConfiguration('UNUSED')),
+        new Rental(2, newReleaseConfiguration('UNUSED')),
+        new Rental(2, newReleaseConfiguration('UNUSED')),
+        new Rental(2, newReleaseConfiguration('UNUSED')),
+        new Rental(4, newReleaseConfiguration('UNUSED')),
+        new Rental(4, newReleaseConfiguration('UNUSED')),
+        new Rental(2, newReleaseConfiguration('UNUSED')),
+      ])
+    ).toEqual(64.98);
+  });
 });

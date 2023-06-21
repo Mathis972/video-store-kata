@@ -43,5 +43,5 @@ export const calculateTotalMoviesPrice = (rentals: Rental[]) => {
       history.push(rental);
     }
   }
-  return total;
+  return Math.round((total + Number.EPSILON) * 100) / 100;
 };

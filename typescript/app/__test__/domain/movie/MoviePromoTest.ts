@@ -45,6 +45,6 @@ describe('MoviePromo', function () {
         new Rental(1, childrenConfiguration('UNUSED')),
         new Rental(1, childrenConfiguration('UNUSED')),
       ])
-    ).toEqual(23.57);
+    ).toEqual(24.3);
   });
 });

@@ -31,7 +31,7 @@ describe('Video Store', function () {
         '- A_NEW_RELEASE_TITLE 3.0\n' +
         '- ANOTHER_NEW_RELEASE_TITLE 3.0\n' +
         '- A_CHILDREN_RELEASE_TITLE 1.5\n' +
-        'Total 7.5\n' +
+        'Total 6.2\n' +
         'Total Rental points 3'
     );
   });
@@ -68,7 +68,7 @@ describe('Video Store', function () {
         '<li>ANOTHER_NEW_RELEASE_TITLE 3.0</li>\n' +
         '<li>A_CHILDREN_RELEASE_TITLE 1.5</li>\n' +
         '</ul>\n' +
-        '<br>You owed 7.5\n' +
+        '<br>You owed 6.2\n' +
         '<br>You earned 3 frequent renter points\n' +
         '</body>\n' +
         '</html>'

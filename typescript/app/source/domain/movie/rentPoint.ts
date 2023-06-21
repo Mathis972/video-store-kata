@@ -7,11 +7,11 @@ const rentPointsFor = (
 };
 
 const rentPointFor = (r: Rental): number => {
-  let baserenterPoint = 1;
-  if (r.rentalDays > 1) {
-    return baserenterPoint + r.mc.rentInfo.additionalRenterPoint;
-  }
-  return baserenterPoint;
+  const baserenterPoint = 1;
+
+  return r.rentalDays > 1
+    ? baserenterPoint + r.mc.rentInfo.additionalRenterPoint
+    : baserenterPoint;
 };
 
 export const calculateRentalPoints: (rentals: Rental[]) => number =

@@ -28,11 +28,23 @@ describe('MoviePromo', function () {
   it('rent w/ two discounts', () => {
     expect(
       calculateTotalMoviesPrice([
-        new Rental(1, newReleaseConfiguration('UNUSED')),
+        new Rental(2, newReleaseConfiguration('UNUSED')),
         new Rental(1, childrenConfiguration('UNUSED')),
         new Rental(1, newReleaseConfiguration('UNUSED')),
         new Rental(1, childrenConfiguration('UNUSED')),
       ])
-    ).toEqual(5);
+    ).toEqual(9.3);
+  });
+
+  it('rent w/ two discounts separated', () => {
+    expect(
+      calculateTotalMoviesPrice([
+        new Rental(3, newReleaseConfiguration('UNUSED')),
+        new Rental(3, newReleaseConfiguration('UNUSED')),
+        new Rental(2, newReleaseConfiguration('UNUSED')),
+        new Rental(1, childrenConfiguration('UNUSED')),
+        new Rental(1, childrenConfiguration('UNUSED')),
+      ])
+    ).toEqual(23.57);
   });
 });

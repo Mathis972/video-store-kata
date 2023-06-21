@@ -81,6 +81,100 @@ describe('MoviePromo', function () {
         new Rental(4, newReleaseConfiguration('UNUSED')),
         new Rental(2, newReleaseConfiguration('UNUSED')),
       ])
-    ).toEqual(64.98);
+    ).toEqual(64.8);
+  });
+
+  it('rent over or equal 20 same movies w/ discount (with 30% off)', () => {
+    expect(
+      calculateTotalMoviesPrice([
+        new Rental(1, newReleaseConfiguration('UNUSED')),
+        new Rental(1, newReleaseConfiguration('UNUSED')),
+        new Rental(1, newReleaseConfiguration('UNUSED')),
+        new Rental(1, newReleaseConfiguration('UNUSED')),
+        new Rental(1, newReleaseConfiguration('UNUSED')),
+        new Rental(1, newReleaseConfiguration('UNUSED')),
+        new Rental(1, newReleaseConfiguration('UNUSED')),
+        new Rental(1, newReleaseConfiguration('UNUSED')),
+        new Rental(1, newReleaseConfiguration('UNUSED')),
+        new Rental(1, newReleaseConfiguration('UNUSED')),
+        new Rental(1, newReleaseConfiguration('UNUSED')),
+        new Rental(1, newReleaseConfiguration('UNUSED')),
+        new Rental(1, newReleaseConfiguration('UNUSED')),
+        new Rental(1, newReleaseConfiguration('UNUSED')),
+        new Rental(1, newReleaseConfiguration('UNUSED')),
+        new Rental(1, newReleaseConfiguration('UNUSED')),
+        new Rental(1, newReleaseConfiguration('UNUSED')),
+        new Rental(1, newReleaseConfiguration('UNUSED')),
+        new Rental(1, newReleaseConfiguration('UNUSED')),
+        new Rental(1, newReleaseConfiguration('UNUSED')),
+      ])
+    ).toEqual(42);
+  });
+
+  it('rent over or equal 40 same movies w/ discount (limit of 80% off)', () => {
+    expect(
+      calculateTotalMoviesPrice([
+        new Rental(1, newReleaseConfiguration('UNUSED')),
+        new Rental(1, newReleaseConfiguration('UNUSED')),
+        new Rental(1, newReleaseConfiguration('UNUSED')),
+        new Rental(1, newReleaseConfiguration('UNUSED')),
+        new Rental(1, newReleaseConfiguration('UNUSED')),
+        new Rental(1, newReleaseConfiguration('UNUSED')),
+        new Rental(1, newReleaseConfiguration('UNUSED')),
+        new Rental(1, newReleaseConfiguration('UNUSED')),
+        new Rental(1, newReleaseConfiguration('UNUSED')),
+        new Rental(1, newReleaseConfiguration('UNUSED')),
+        new Rental(1, newReleaseConfiguration('UNUSED')),
+        new Rental(1, newReleaseConfiguration('UNUSED')),
+        new Rental(1, newReleaseConfiguration('UNUSED')),
+        new Rental(1, newReleaseConfiguration('UNUSED')),
+        new Rental(1, newReleaseConfiguration('UNUSED')),
+        new Rental(1, newReleaseConfiguration('UNUSED')),
+        new Rental(1, newReleaseConfiguration('UNUSED')),
+        new Rental(1, newReleaseConfiguration('UNUSED')),
+        new Rental(1, newReleaseConfiguration('UNUSED')),
+        new Rental(1, newReleaseConfiguration('UNUSED')),
+        new Rental(1, newReleaseConfiguration('UNUSED')),
+        new Rental(1, newReleaseConfiguration('UNUSED')),
+        new Rental(1, newReleaseConfiguration('UNUSED')),
+        new Rental(1, newReleaseConfiguration('UNUSED')),
+        new Rental(1, newReleaseConfiguration('UNUSED')),
+        new Rental(1, newReleaseConfiguration('UNUSED')),
+        new Rental(1, newReleaseConfiguration('UNUSED')),
+        new Rental(1, newReleaseConfiguration('UNUSED')),
+        new Rental(1, newReleaseConfiguration('UNUSED')),
+        new Rental(1, newReleaseConfiguration('UNUSED')),
+        new Rental(1, newReleaseConfiguration('UNUSED')),
+        new Rental(1, newReleaseConfiguration('UNUSED')),
+        new Rental(1, newReleaseConfiguration('UNUSED')),
+        new Rental(1, newReleaseConfiguration('UNUSED')),
+        new Rental(1, newReleaseConfiguration('UNUSED')),
+        new Rental(1, newReleaseConfiguration('UNUSED')),
+        new Rental(1, newReleaseConfiguration('UNUSED')),
+        new Rental(1, newReleaseConfiguration('UNUSED')),
+        new Rental(1, newReleaseConfiguration('UNUSED')),
+        new Rental(1, newReleaseConfiguration('UNUSED')),
+        new Rental(1, newReleaseConfiguration('UNUSED')),
+        new Rental(1, newReleaseConfiguration('UNUSED')),
+        new Rental(1, newReleaseConfiguration('UNUSED')),
+        new Rental(1, newReleaseConfiguration('UNUSED')),
+        new Rental(1, newReleaseConfiguration('UNUSED')),
+        new Rental(1, newReleaseConfiguration('UNUSED')),
+        new Rental(1, newReleaseConfiguration('UNUSED')),
+        new Rental(1, newReleaseConfiguration('UNUSED')),
+        new Rental(1, newReleaseConfiguration('UNUSED')),
+        new Rental(1, newReleaseConfiguration('UNUSED')),
+        new Rental(1, newReleaseConfiguration('UNUSED')),
+        new Rental(1, newReleaseConfiguration('UNUSED')),
+        new Rental(1, newReleaseConfiguration('UNUSED')),
+        new Rental(1, newReleaseConfiguration('UNUSED')),
+        new Rental(1, newReleaseConfiguration('UNUSED')),
+        new Rental(1, newReleaseConfiguration('UNUSED')),
+        new Rental(1, newReleaseConfiguration('UNUSED')),
+        new Rental(1, newReleaseConfiguration('UNUSED')),
+        new Rental(1, newReleaseConfiguration('UNUSED')),
+        new Rental(1, newReleaseConfiguration('UNUSED')),
+      ])
+    ).toEqual(36);
   });
 });

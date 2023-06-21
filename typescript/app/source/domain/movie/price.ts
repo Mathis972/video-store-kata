@@ -50,11 +50,8 @@ export const calculateTotalMoviesPrice = (rentals: Rental[]) => {
     }
   }
   if (rentals.length >= 5) {
-    total -= total * 0.05;
-  }
-  if (rentals.length >= 5) {
-    const modulo = Math.round((rentals.length - 5) / 3);
-    console.log(modulo)
+    let modulo = 1;
+    modulo += Math.round((rentals.length - 5) / 3);
     const discount = Math.min(0.8, modulo * 0.05);
     total -= total * discount;
   }

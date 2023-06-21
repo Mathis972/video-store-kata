@@ -53,6 +53,18 @@ describe('MoviePromo', function () {
         new Rental(1, childrenConfiguration('UNUSED')),
         new Rental(1, childrenConfiguration('UNUSED')),
       ])
-    ).toEqual(20.7);
+    ).toEqual(19.67);
+  });
+
+  it('rent over or equal 5 same movies', () => {
+    expect(
+      calculateTotalMoviesPrice([
+        new Rental(3, newReleaseConfiguration('UNUSED')),
+        new Rental(3, newReleaseConfiguration('UNUSED')),
+        new Rental(2, newReleaseConfiguration('UNUSED')),
+        new Rental(2, newReleaseConfiguration('UNUSED')),
+        new Rental(2, newReleaseConfiguration('UNUSED')),
+      ])
+    ).toEqual(34.2);
   });
 });
